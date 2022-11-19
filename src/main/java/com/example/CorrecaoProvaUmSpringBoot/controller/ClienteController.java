@@ -37,7 +37,7 @@ public class ClienteController {
     public List<Cliente> getAllCliente(){
         return clienteRepository.findAll();
     }
-    @DeleteMapping
+    @DeleteMapping("{id}")
     public String deleteClienteById(@PathVariable Long id){
         Optional<Cliente> clienteOptional = clienteRepository.findById(id);
         if(clienteOptional.isPresent()){
